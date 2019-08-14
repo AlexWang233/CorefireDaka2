@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts - Generate By @isea533/abel533</title>
+    <style>*{ margin:0} html,body{ height:100%} .wrapper{ min-height:100%; height:auto !important; height:100%; margin:0 auto -155px} .footer,.push{ height:155px} table.gridtable{ font-family:verdana,arial,sans-serif; font-size:11px; color:#333; border-width:1px; border-color:#666; border-collapse:collapse; margin:5px auto} table.gridtable th{ border-width:1px; padding:8px; border-style:solid; border-color:#666; background-color:#dedede} table.gridtable td{ border-width:1px; padding:8px; border-style:solid; border-color:#666; background-color:#fff} .middle{ text-align:center; margin:0 auto; width:90%; height:auto} .info{ font-size:12px; text-align:center; line-height:20px; padding:40px} .info a{ margin:0 10px; text-decoration:none; color:green}</style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="middle">
+        <h1 style="padding: 70px 0 20px;">ECharts效果</h1>
+        <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+        <div id="main" style="height:400px"></div>
+    </div>
+    <div class="push"></div>
+</div>
+<div class="footer">
+    <div class="info">
+        ECharts - JAVA开发工具：
+        <a href="http://git.oschina.net/free/ECharts" target="_blank">项目地址</a>
+        <a href="http://echarts.baidu.com" target="_blank">ECharts地址</a>
+        <br/>
+        作者：<a href="http://blog.csdn.net/isea533" style="margin: 0;" target="_blank">@Isea533/abel533</a>
+    </div>
+</div>
+</body>
+<!-- ECharts单文件引入 -->
+<script src="http://echarts.baidu.com/gallery/vendors/echarts/echarts-all-3.js"></script>
+<script type="text/javascript">
+// 基于准备好的dom，初始化echarts图表
+var myChart = echarts.init(document.getElementById('main'));
+
+var option = {"calculable": true,"title": {"text": "2019-07-29 打卡报表","link": "http://echarts.baidu.com/doc/example.html","subtext": "Rainbow bar example","x": "center"},"toolbox": {"feature": {"mark": {"show": true,"title": {"markUndo": "删除辅助线","markClear": "清空辅助线","mark": "辅助线开关"},"lineStyle": {"color": "#1e90ff","type": "dashed","width": 2}},"dataView": {"show": true,"title": "数据视图","readOnly": false,"lang": ["数据视图","关闭","刷新"]},"magicType": {"show": true,"title": {"bar": "柱形图切换","stack": "堆积","tiled": "平铺","line": "折线图切换"},"type": ["line","bar"]},"restore": {"show": true,"title": "还原"},"saveAsImage": {"show": true,"title": "保存为图片","type": "png","lang": ["点击保存"]}},"show": true},"tooltip": {"trigger": "item"},"grid": {"x2": 20,"y2": 30,"y": 70},"xAxis": [{"type": "category","data": ["Alex","Bob","Cindy"]},{"type": "category","axisLine": {"show": false},"axisTick": {"show": false,"alignWithLabel": false},"axisLabel": {"show": false},"splitArea": {"show": false},"data": ["Alex","Bob","Cindy"]}],"yAxis": [{"show": false,"type": "value"}],"series": [{"name": "ECharts例子个数统计","type": "bar","tooltip": {"formatter": function(params){                    var date = new Date(params.value * 1);                    var h = date.getHours();                    if(h < 10){                       h = '0' + h;                    }                    var m = date.getMinutes();                    if(m < 10){                       m = '0' + m;                    }                    return '离去时间：'+h+':'+m;                }},"itemStyle": {"normal": {"label": {"show": true,"formatter": function(params){                    var date = new Date(params.value * 1);                    var h = date.getHours();                    if(h < 10){                       h = '0' + h;                    }                    var m = date.getMinutes();                    if(m < 10){                       m = '0' + m;                    }                    return '离去时间：'+h+':'+m;                },"position": "top"},"color": function(params) {                        var colorList = [                          '#000000','#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',                           '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD',                           '#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0'                        ];                        return colorList[params.dataIndex - params.dataIndex]                    }}},"data": ["37466646","38466646","39466646"]},{"xAxisIndex": 1,"name": "ECharts例子个数统计","type": "bar","tooltip": {"formatter": function(params){                    var date = new Date(params.value * 1);                    var h = date.getHours();                    if(h < 10){                       h = '0' + h;                    }                    var m = date.getMinutes();                    if(m < 10){                       m = '0' + m;                    }                    return '到来时间：'+h+':'+m;                }},"itemStyle": {"normal": {"label": {"show": true,"formatter": function(params){                    var date = new Date(params.value * 1);                    var h = date.getHours();                    if(h < 10){                       h = '0' + h;                    }                    var m = date.getMinutes();                    if(m < 10){                       m = '0' + m;                    }                    return '到来时间：'+h+':'+m;                },"position": "top"},"color": function(params) {                        var colorList = [                          '#FFFFFF','#C1232B','#B5C334','#FCCE10','#E87C25','#27727B',                           '#FE8463','#9BCA63','#FAD860','#F3A43B','#60C0DD',                           '#D7504B','#C6E579','#F4E001','#F0805A','#26C0C0'                        ];                        return colorList[params.dataIndex - params.dataIndex]                    }}},"data": ["27466646","28466646","29466646"]}]};
+
+// 为echarts对象加载数据
+myChart.setOption(option);
+</script>
+</html>
